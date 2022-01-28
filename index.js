@@ -1,4 +1,6 @@
-function changeLetters(e) {
+target = document.getElementById('inputtext')
+
+target.addEventListener('paste', (e) => {
 
   e.stopPropagation();
   e.preventDefault();
@@ -21,4 +23,4 @@ function changeLetters(e) {
   changeBack = changeBack.replaceAll('񣙧', 'L')
 
   e.target.value = changeBack
-}
+});
