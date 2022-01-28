@@ -1,4 +1,4 @@
-changeLetters() {
+function changeLetters() {
 
   var textarea = document.getElementById('inputtext');
 
