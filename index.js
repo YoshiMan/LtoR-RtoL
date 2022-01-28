@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    target = document.getElementById('inputtext')
-
-    target.addEventListener('paste', (e) => {
+    inputtext = document.getElementById('inputtext')
+    inputtext.addEventListener('paste', (e) => {
 
         e.stopPropagation();
         e.preventDefault();
@@ -26,4 +25,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         e.target.value = changeBack
     });
+
+
+    speakButton = document.getElementById('speakButton')
+    speakButton.addEventListener('click', (e) => {
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = inputtext.value;
+        window.speechSynthesis.speak(msg);
+
+    });
+
 });
