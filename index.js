@@ -1,26 +1,29 @@
-target = document.getElementById('inputtext')
+document.addEventListener("DOMContentLoaded", function(event) {
 
-target.addEventListener('paste', (e) => {
+    target = document.getElementById('inputtext')
 
-  e.stopPropagation();
-  e.preventDefault();
+    target.addEventListener('paste', (e) => {
 
-  // Get pasted data via clipboard API
-  var clipboardData = e.clipboardData || window.clipboardData;
-  var pastedData = clipboardData.getData('Text');
+        e.stopPropagation();
+        e.preventDefault();
 
-
-
-  changeToRandomUTF = pastedData.replaceAll('l', '񅪜')
-  changeToRandomUTF = changeToRandomUTF.replaceAll('L', 'ѯ')
-  changeToRandomUTF = changeToRandomUTF.replaceAll('r', '𫍪')
-  changeToRandomUTF = changeToRandomUTF.replaceAll('R', '񣙧')
+        // Get pasted data via clipboard API
+        var clipboardData = e.clipboardData || window.clipboardData;
+        var pastedData = clipboardData.getData('Text');
 
 
-  changeBack = changeToRandomUTF.replaceAll('񅪜', 'r')
-  changeBack = changeBack.replaceAll('ѯ', 'R')
-  changeBack = changeBack.replaceAll('𫍪', 'l')
-  changeBack = changeBack.replaceAll('񣙧', 'L')
 
-  e.target.value = changeBack
+        changeToRandomUTF = pastedData.replaceAll('l', '񅪜')
+        changeToRandomUTF = changeToRandomUTF.replaceAll('L', 'ѯ')
+        changeToRandomUTF = changeToRandomUTF.replaceAll('r', '𫍪')
+        changeToRandomUTF = changeToRandomUTF.replaceAll('R', '񣙧')
+
+
+        changeBack = changeToRandomUTF.replaceAll('񅪜', 'r')
+        changeBack = changeBack.replaceAll('ѯ', 'R')
+        changeBack = changeBack.replaceAll('𫍪', 'l')
+        changeBack = changeBack.replaceAll('񣙧', 'L')
+
+        e.target.value = changeBack
+    });
 });
