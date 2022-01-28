@@ -1,4 +1,4 @@
-function changeLetters(event) {
+function changeLetters(e) {
 
   e.stopPropagation();
   e.preventDefault();
@@ -20,5 +20,5 @@ function changeLetters(event) {
   changeBack = changeBack.replaceAll('𫍪', 'l')
   changeBack = changeBack.replaceAll('񣙧', 'L')
 
-  document.getElementById('inputtext').value = changeBack
+  e.target.value = changeBack
 }
